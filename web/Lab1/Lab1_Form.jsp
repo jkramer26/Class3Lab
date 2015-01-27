@@ -15,8 +15,10 @@
         <h2>Lab 1 Form </h2>
         
         <form id="form1" name="form1" method="POST" action="../rectangleCalc">
+            <label for="length">Enter a length</label>
             <input id="length" name="length" type="text" value="" />
-            
+            <br />
+            <label for="width">Enter a width</label>
             <input id="width" name="width" type="text" value="" />
             
             <input type="submit" name="submit" id="submit" value="Calculate" />           

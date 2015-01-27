@@ -1,9 +1,9 @@
 
-package lab1;
+package lab2Model;
 
 /**
  *
- * @author jkramer26
+ * @author owner
  */
 public class RectangleCalculator {
     private double area;
@@ -13,6 +13,4 @@ public class RectangleCalculator {
         String areaString = Double.toString(area);
         return areaString; 
     }
-    
-    
 }

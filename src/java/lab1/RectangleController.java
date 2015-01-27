@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "RectangleCalculateController", urlPatterns = {"/rectangleCalc"})
 public class RectangleController extends HttpServlet {
     
-    private static final String RESULT_PAGE = "lab1/Lab1_Results.jsp";
+    private static final String RESULT_PAGE = "/Lab1/Lab1_Results.jsp";
     
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,31 +32,31 @@ public class RectangleController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html");
-        
-        //retrieve values from form
-        String length = request.getParameter("length");
-        String width = request.getParameter("width");
-        
-        //Create new instance of model
-        RectangleCalculator rc = new RectangleCalculator();
-        
-        //call method from model to calculate area with retrieved values
-        //set the result of the calculation into the result variable
-        Double result = rc.getArea(length, width);
-        
-        //set the attribute with the calculated result
-        request.setAttribute("area", result);
-        
-        //forware the data to the result page 
-        RequestDispatcher view
-                = request.getRequestDispatcher(RESULT_PAGE);
-        //forwarding the request and response
-        view.forward(request, response);
-        
-    }
+//    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+//            throws ServletException, IOException {
+////        response.setContentType("text/html");
+////        
+////        //retrieve values from form
+////        String length = request.getParameter("length");
+////        String width = request.getParameter("width");
+////        
+////        //Create new instance of model
+////        RectangleCalculator rc = new RectangleCalculator();
+////        
+////        //call method from model to calculate area with retrieved values
+////        //set the result of the calculation into the result variable
+////        Double result = rc.getArea(length, width);
+////        
+////        //set the attribute with the calculated result
+////        request.setAttribute("area", result);
+////        
+////        //forware the data to the result page 
+////        RequestDispatcher view
+////                = request.getRequestDispatcher(RESULT_PAGE);
+////        //forwarding the request and response
+////        view.forward(request, response);
+//        
+//    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -70,7 +70,7 @@ public class RectangleController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
     }
 
     /**
@@ -84,7 +84,28 @@ public class RectangleController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
+        response.setContentType("text/html");
+        
+        //retrieve values from form
+        String length = request.getParameter("length");
+        String width = request.getParameter("width");
+        
+        //Create new instance of model
+        RectangleCalculator rc = new RectangleCalculator();
+        
+        //call method from model to calculate area with retrieved values
+        //set the result of the calculation into the result variable
+        String result = rc.getArea(length, width);
+        
+        //set the attribute with the calculated result
+        request.setAttribute("area", result);
+        
+        //forware the data to the result page 
+        RequestDispatcher view
+                = request.getRequestDispatcher(RESULT_PAGE);
+        //forwarding the request and response
+        view.forward(request, response);
     }
 
     /**
