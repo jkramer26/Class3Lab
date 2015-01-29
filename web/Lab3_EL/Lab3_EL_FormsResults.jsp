@@ -1,17 +1,20 @@
 <%-- 
-    Document   : Lab3_FormsResults
-    Created on : Jan 27, 2015, 3:23:26 PM
+    Document   : Lab3_EL_FormsResults
+    Created on : Jan 29, 2015, 3:14:41 PM
     Author     : owner
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.*" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Class 3 Lab 3</title>
-        <link href="<%= request.getContextPath() %>/bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="<%= request.getContextPath() %>/bootstrap-3.3.2-dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+        <title>Lab 3 with EL</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     </head>
     <body>
         <div class="container">
@@ -41,21 +44,8 @@
             </form>
             <br />
             <br />
-            <% 
-                Object rectangleArea = request.getAttribute("rectangleArea");
-                String rectangleAreaResult = "";            
 
-                if (rectangleArea == null) {
-                    out.println(" ");
-                } else {
-                    rectangleAreaResult = (String)rectangleArea; 
-                    out.println("<h1><span class='label label-default'>" + rectangleAreaResult + " is the area of the rectangle</span></h1>");
-                }
-
-                
-                //out.println("<a href='Lab3/Lab3_FormsResults.jsp'>Calculate Again</a>");
-            %>
-            
+            <h1 hidden><span class='label label-default'>${rectangleArea} is the area of the rectangle</span></h1>
 
             <br />
             <br />
@@ -77,20 +67,7 @@
             </form>
             <br />
             <br />
-            <% 
-                Object circleArea = request.getAttribute("circleArea");
-                String circleAreaResult = "";            
-
-                if (circleArea == null) {
-                    out.println(" ");
-                } else {
-                    circleAreaResult = (String)circleArea; 
-                    out.println("<h1><span class='label label-default'>" + circleAreaResult + " is the area of the circle</span></h1>");
-                }
-
-                //out.println("<a href='Lab3_FormsResults.jsp'>Calculate Again</a>");
-            %>
-            
+            <h1 hidden><span class='label label-default'>${circleArea} is the area of the circle</span></h1>
 
             <br />
             <br />
@@ -118,20 +95,7 @@
             </form>
             <br />
             <br />
-            <% 
-                Object triangleArea = request.getAttribute("triangleArea");
-                String triangleAreaResult = "";            
-
-                if (triangleArea == null) {
-                    out.println(" ");
-                } else {
-                    triangleAreaResult = (String)triangleArea; 
-                    out.println("<h1><span class='label label-default'>" + triangleAreaResult + " is the area of the triangle</span></h1>");
-                }
-                
-                //out.println("<a href='Lab3_FormsResults.jsp'>Calculate Again</a>");
-            %>
-            <!-- Could just out put the result here and just put the variable in between tags-->
+            <h1 hidden><span class='label label-default'>${triangleArea} is the area of the triangle</span></h1>
             
         </div> 
     </body>

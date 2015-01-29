@@ -1,27 +1,29 @@
 /*
- * Should only be using one controller for calculator. The other 3 seperate ones violate single responsiblity principle and should not be used. 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-package lab3Controller;
+package lab3EL_Controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import lab3Model.AreaCalculator;
+import lab3EL_Model.AreaCalculator;
 
 /**
  *
- * @author jkramer26
+ * @author owner
  */
-@WebServlet(name = "CalcController", urlPatterns = {"/CalcControl"})
-public class CalculatorController extends HttpServlet {
-
+@WebServlet(name = "AreaCalculatorControl", urlPatterns = {"/AreaCalcControl"})
+public class AreaCalculatorController extends HttpServlet {
+    
+    
     //this is the page information will be forwarded to
-    private static final String RESULT_PAGE = "/Lab3/Lab3_FormsResults.jsp";
+    private static final String RESULT_PAGE = "/Lab3_EL/Lab3_EL_FormsResults.jsp";
 
     //defining what the key is within the query string
     private static String KEY = "calcType";
@@ -29,7 +31,7 @@ public class CalculatorController extends HttpServlet {
     private static String TRIANGLE_TYPE = "triangle";
     private static String RECTANGLE_TYPE = "rectangle";
     private static String CIRCLE_TYPE = "circle";
-
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -41,7 +43,7 @@ public class CalculatorController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
         response.setContentType("text/html");
 
         //setting a variable equal to the key variable defined above
@@ -96,7 +98,7 @@ public class CalculatorController extends HttpServlet {
                 = request.getRequestDispatcher(RESULT_PAGE);
         //forwarding the request and response
         view.forward(request, response);
-
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
