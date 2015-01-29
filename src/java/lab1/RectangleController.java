@@ -85,7 +85,7 @@ public class RectangleController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-        response.setContentType("text/html");
+        response.setContentType("text/plain");
         
         //retrieve values from form
         String length = request.getParameter("length");
