@@ -27,13 +27,13 @@
                 <div class="form-group">
                     <label for="length" class="col-sm-2 control-label">Enter a length</label>
                     <div class="col-sm-3">
-                        <input class="form-control" id="length" name="length" type="text" value="" />
+                        <input class="form-control" id="length" name="length" type="number" value="" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="width" class="col-sm-2 control-label">Enter a width</label>
                     <div class="col-sm-3">
-                        <input class="form-control" id="width" name="width" type="text" value="" />
+                        <input class="form-control" id="width" name="width" type="number" value="" />
                     </div>
                 </div>
                 <div class="form-group">
@@ -56,7 +56,7 @@
                 <div class="form-group">
                     <label for="radius" class="col-sm-2 control-label">Enter a radius</label>
                     <div class="col-sm-3">
-                        <input class="form-control" id="radius" name="radius" type="text" value="" />
+                        <input class="form-control" id="radius" name="radius" type="number" value="" />
                     </div>
                 </div>
                 <div class="form-group">
@@ -78,13 +78,13 @@
                 <div class="form-group">
                     <label for="height" class="col-sm-2 control-label">Enter a height: </label>
                     <div class="col-sm-3">
-                        <input class="form-control" id="height" name="height" type="text" value="" />
+                        <input class="form-control" id="height" name="height" type="number" value="" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="base" class="col-sm-2 control-label">Enter a base: </label>
                     <div class="col-sm-3">
-                        <input class="form-control" id="base" name="base" type="text" value="" />
+                        <input class="form-control" id="base" name="base" type="number" value="" />
                     </div>
                 </div>
                 <div class="form-group">
